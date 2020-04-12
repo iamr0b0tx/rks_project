@@ -1,0 +1,19 @@
+@echo off
+
+echo git adding ...
+git add .
+
+echo git committing ...
+git commit -m "preping for heroku deploy"
+
+echo git pushing to origin ...
+git push origin master
+
+echo git pushing to heroku ...
+git push heroku master
+
+echo migrating ...
+heroku run python manage.py migrate
+
+echo logs ...
+heroku logs --tail

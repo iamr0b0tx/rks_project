@@ -13,7 +13,7 @@ function signin(){
 
     send_post_request(window.location.origin + '/api/rest-auth/login/', payload, function (data, status){
 
-        if(status == 200){
+        if (status == 200 || status == 201){
             signin_message.innerHTML = "Welcome, " + username.value + "!";
 
             // Store token in browser

@@ -88,7 +88,7 @@ function submit(element) {
                 console.log(status);
 
                 // get response if succesfull or not
-                var message = (status == 200) ? "Successful" : "Failed! Make sure to fill all fields with numbers!";
+                var message = (status == 200 || status == 201) ? "Successful" : "Failed! Make sure to fill all fields with numbers!";
                 alert('Data upload ' + message + '!');
             });
     }
