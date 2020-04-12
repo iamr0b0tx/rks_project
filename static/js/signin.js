@@ -11,7 +11,7 @@ function signin(){
         password: password.value,
     };
 
-    send_post_request('http://localhost:8000/api/rest-auth/login/', payload, function (data, status){
+    send_post_request('api/rest-auth/login/', payload, function (data, status){
 
         if(status == 200){
             signin_message.innerHTML = "Welcome, " + username.value + "!";
