@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 .vscode/
 main.cmd
+deploy.cmd
