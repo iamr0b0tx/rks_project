@@ -25,6 +25,6 @@ class LandSerializer(serializers.ModelSerializer):
             'land_id', 'uploaded_by', 'longitude', 'latitude', 'size', 'productive_quality', 'land_type', 'quality', 
             'mineral_quantity', 'road_type', 'distance_to_paved_road', 'distance_to_nearest_town',
             'nearest_town_size', 'distance_to_principal_city', 'distance_to_metropolitan_center', 
-            'distance_to_city_towns', 'wheat_allotment', 'cotton_allotment', 'peanut_allotment', 'timestamp'
+            'distance_to_city_towns', 'wheat_allotment', 'cotton_allotment', 'peanut_allotment', 'land_value', 'timestamp'
         )
         read_only_fields = ('land_id', 'uploaded_by', 'timestamp')

@@ -3,14 +3,14 @@ from rest_framework import viewsets
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 from api.serializers import LandSerializer, UserSerializer
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.authentication import TokenAuthentication
 
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by()
     serializer_class = UserSerializer
 
 class LandView(viewsets.ModelViewSet):
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     
     queryset = Land.objects.all().order_by()
