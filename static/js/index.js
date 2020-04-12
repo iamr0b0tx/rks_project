@@ -62,7 +62,7 @@ username_label.innerHTML = sessionStorage.getItem('username');
 
 function submit(element) {
     if (element.innerHTML == "Upload") {
-        send_post_request("api/land/",
+        send_post_request(window.location.origin + "/api/land/",
             {
                 "longitude": longitude.value,
                 "latitude": latitude.value,
@@ -95,7 +95,7 @@ function submit(element) {
 }
 
 function logout() {
-    send_post_request("api/rest-auth/logout/", {}, function (data, status) {
-        location.href = 'accounts/login/'
+    send_post_request(window.location.origin + "/api/rest-auth/logout/", {}, function (data, status) {
+        location.href = window.location.origin + '/accounts/login/'
     });
 }

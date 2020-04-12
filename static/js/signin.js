@@ -11,7 +11,7 @@ function signin(){
         password: password.value,
     };
 
-    send_post_request('api/rest-auth/login/', payload, function (data, status){
+    send_post_request(window.location.origin + '/api/rest-auth/login/', payload, function (data, status){
 
         if(status == 200){
             signin_message.innerHTML = "Welcome, " + username.value + "!";
@@ -21,7 +21,7 @@ function signin(){
             sessionStorage.setItem("username", username.value);
 
             // go home
-            location.href = "/"
+            location.href = window.location.origin
 
         }else{
             signin_message.innerHTML = "Sign in Failed!";
