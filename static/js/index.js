@@ -1,8 +1,21 @@
-// mapbox code initializations
-mapboxgl.accessToken = 'pk.eyJ1IjoiaWFtcjBiMHR4IiwiYSI6ImNrOHJtdm5pbTA0MHUzbHBqZ292ODdnYjAifQ.NkW4bdn3I8VXvbP7-IeE5w';
-var coordinates = document.getElementById('coordinates');
+
+function logout() {
+    send_post_request(window.location.origin + "/api/rest-auth/logout/", {}, function (data, status) {
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('username');
+        location.href = window.location.origin + '/accounts/login/'
+
+    });
+}
+
+// if session has ended
+if (!sessionStorage.getItem('token')) {
+    logout();
+
+}
 
 // code initializations
+var input_field = document.getElementById('input_field');
 var username_label = document.getElementById('username');
 var value_input = document.getElementById('value_input');
 
@@ -32,32 +45,8 @@ var peanut_allotment = document.getElementById('peanut_allotment');
 
 var land_value = document.getElementById('value_input');
 
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [0, 0],
-    zoom: 2
-});
 
-var marker = new mapboxgl.Marker({
-    draggable: true
-})
-    .setLngLat([0, 0])
-    .addTo(map);
-
-function onDragEnd() {
-    var lngLat = marker.getLngLat();
-    coordinates.style.display = 'hidden';
-    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
-
-    // update input field
-    longitude.value = lngLat.lng;
-    latitude.value = lngLat.lat;
-}
-
-marker.on('dragend', onDragEnd);
-
-// custom code starts here
+// show username
 username_label.innerHTML = sessionStorage.getItem('username');
 
 function submit(element) {
@@ -91,11 +80,9 @@ function submit(element) {
                 var message = (status == 200 || status == 201) ? "Successful" : "Failed! Make sure to fill all fields with numbers!";
                 alert('Data upload ' + message + '!');
             });
-    }
+    }   
 }
 
-function logout() {
-    send_post_request(window.location.origin + "/api/rest-auth/logout/", {}, function (data, status) {
-        location.href = window.location.origin + '/accounts/login/'
-    });
+function toggle_input_field(){
+    input_field.style.zIndex = -1 * parseInt(input_field.style.zIndex);
 }
