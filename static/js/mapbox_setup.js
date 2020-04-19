@@ -35,7 +35,7 @@ send_get_request(window.location.origin + "/api/land_mini/", function (data, sta
                 marker.setOpacity(0);
 
                 edit_marker.setOpacity(1);
-                edit_marker.setZIndexOffset(1);
+                edit_marker.setZIndexOffset(10);
                 edit_marker.setLatLng(e.latlng);
                 
                 hidden_marker.setZIndexOffset(1);
@@ -104,7 +104,7 @@ new_marker.on('drag', function (e) {
 
     // hide the edit marker
     edit_marker.setOpacity(0);
-    edit_marker.setZIndexOffset(-1);
+    edit_marker.setZIndexOffset(-10);
 
     // show the hidden
     hidden_marker.setZIndexOffset(1);
@@ -112,4 +112,9 @@ new_marker.on('drag', function (e) {
 
     longitude.value = e.latlng.lng; // e is an event object (MouseEvent in this case)
     latitude.value = e.latlng.lat; // e is an event object (MouseEvent in this case)
+
+    query_btn.style.opacity = 0.5;
+    upload_btn.style.opacity = 1.0;
+    submit_btn.innerHTML = "Upload";
+    value_input.removeAttribute("disabled");
 });

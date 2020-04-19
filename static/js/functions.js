@@ -25,18 +25,25 @@ function send_request(url, callback, method, data, use_token) {
 
     if(use_token) xmlhttp.setRequestHeader('Authorization', 'Token ' + sessionStorage.getItem("token"));
 
-    if(method == 'GET'){
-        xmlhttp.send();
+    if(method == "GET"){
+        if(data){
+            console.log(data);
+            xmlhttp.setRequestHeader("Content-type", "application/json");
+            xmlhttp.send(data);
+        }
+        else xmlhttp.send();
 
     }else{
+        console.log(serialize(data));
+
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send(serialize(data));
     }
     
 }
 
-function send_get_request(url, callback, use_token=true){
-    return send_request(url, callback, "GET", null, use_token);
+function send_get_request(url, callback, data=false, use_token=true){
+    return send_request(url, callback, "GET", data, use_token);
 }
 
 function send_post_request(url, data, callback, use_token=true){
