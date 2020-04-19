@@ -113,6 +113,7 @@ new_marker.on('drag', function (e) {
     longitude.value = e.latlng.lng; // e is an event object (MouseEvent in this case)
     latitude.value = e.latlng.lat; // e is an event object (MouseEvent in this case)
 
+    // toggle Submit
     query_btn.style.opacity = 0.5;
     upload_btn.style.opacity = 1.0;
     submit_btn.innerHTML = "Upload";
