@@ -9,8 +9,10 @@
 
         <!-- mapjs dependencies -->
         <script src="{% static 'js/mapbox.js' %}"></script>
-        <script src="{% static 'js/leaflet.markercluster.js' %}"></script>
         <link href="{% static 'css/mapbox.css' %}" rel="stylesheet" />
+
+        <!-- leaflet -->
+        <script src="{% static 'js/leaflet.markercluster.js' %}"></script>
         <link href="{% static 'css/MarkerCluster.css' %}" rel="stylesheet" />
         <link href="{% static 'css/MarkerCluster.Default.css' %}" rel="stylesheet" />
         
@@ -73,63 +75,63 @@
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="longitude">Longitude:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="longitude" placeholder="3.45678">
+                        <input type="number" class="form-control" id="longitude">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="longitude">Latitude:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="latitude" placeholder="3.45678">
+                        <input type="number" class="form-control" id="latitude">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="size">Size (acres):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="size" placeholder="1000">
+                        <input type="number" class="form-control" id="size">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="productive_quality">Productive Quality:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="productive_quality" placeholder="3.4">
+                        <input type="number" class="form-control" id="productive_quality" >
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="land_type">Land Type:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="land_type" placeholder="3">
+                        <input type="number" class="form-control" id="land_type">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="quality">Quality:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="quality" placeholder="5.5">
+                        <input type="number" class="form-control" id="quality">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="mineral_quantity">Mineral Quantity (%):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="mineral_quantity" placeholder="40">
+                        <input type="number" class="form-control" id="mineral_quantity">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="road_type">Road Type:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="road_type" placeholder="3">
+                        <input type="number" class="form-control" id="road_type">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_paved_road">Distance to paved road:</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="distance_to_paved_road" placeholder="3.45678">
+                        <input type="number" class="form-control" id="distance_to_paved_road">
                     </div>
                 </div>
         
@@ -137,14 +139,14 @@
                     <label class="control-label col-md-8" for="distance_to_nearest_town">Distance to nearest town
                         (miles):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="distance_to_nearest_town" placeholder="38.5">
+                        <input type="number" class="form-control" id="distance_to_nearest_town">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="nearest_town_size">Nearest town size (people):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="nearest_town_size" placeholder="300">
+                        <input type="number" class="form-control" id="nearest_town_size">
                     </div>
                 </div>
         
@@ -152,7 +154,7 @@
                     <label class="control-label col-md-8" for="distance_to_principal_city">Distance to principal city
                         (miles):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="distance_to_principal_city" placeholder="1200">
+                        <input type="number" class="form-control" id="distance_to_principal_city">
                     </div>
                 </div>
         
@@ -160,35 +162,35 @@
                     <label class="control-label col-md-8" for="distance_to_metropolitan_center">Distance to metropolitan center
                         (miles):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="distance_to_metropolitan_center" placeholder="3478">
+                        <input type="number" class="form-control" id="distance_to_metropolitan_center">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_city_towns">Distance to city towns (miles):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="distance_to_city_towns" placeholder="4500">
+                        <input type="number" class="form-control" id="distance_to_city_towns">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="wheat_allotment">Wheat allotment (acres):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="wheat_allotment" placeholder="378">
+                        <input type="number" class="form-control" id="wheat_allotment">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="cotton_allotment">Cotton allotment (acres):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="cotton_allotment" placeholder="120">
+                        <input type="number" class="form-control" id="cotton_allotment">
                     </div>
                 </div>
         
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="peanut_allotment">Peanut allotment (acres):</label>
                     <div class="col-md-4">
-                        <input type="number" class="form-control" id="peanut_allotment" placeholder="24">
+                        <input type="number" class="form-control" id="peanut_allotment" >
                     </div>
                 </div>
         
@@ -202,9 +204,9 @@
         <div id='map'></div>
 
         <!-- custom js -->
-        <!-- <script src="{% static 'js/mapbox_setup.js' %}"></script> -->
         <script src="{% static 'js/functions.js' %}"></script>
         <script src="{% static 'js/index.js' %}"></script>
+        <script src="{% static 'js/mapbox_setup.js' %}"></script>
 
     </body>
 

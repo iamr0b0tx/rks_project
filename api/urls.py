@@ -6,6 +6,7 @@ from django.urls import path, include
 router = routers.DefaultRouter()
 # router.register(r'user', views.UserView, 'User')
 router.register(r'land', views.LandView, 'Land')
+router.register(r'land_mini', views.LandMiniView, 'Land Mini')
 
 # all urls that can be visited
 urlpatterns = [

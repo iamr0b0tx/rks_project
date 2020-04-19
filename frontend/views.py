@@ -12,3 +12,7 @@ def index(request):
 def signin(request):
     ''' login page of site '''
     return render(request, 'signin.html')
+
+def signup(request):
+    ''' signup page of site '''
+    return render(request, 'signup.html')

@@ -45,6 +45,8 @@ div > form {
     margin-top: 10px;
     height: 60%;
     width: 100%;
+    font-weight: 800;
+    color: #000;
 }
 
 .form-horizontal .form-group {

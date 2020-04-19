@@ -29,6 +29,17 @@ class LandSerializer(serializers.ModelSerializer):
         )
         read_only_fields = ('uploaded_by', 'timestamp')
 
+    def update(self, instance, validated_data):
+        instance.land_id = validated_data.get('land_id', instance.land_id)
+        instance.save()
+
+        for album_data in albums_data:
+            album = albums.pop(0)
+            album.name = album_data.get('name', album.name)
+            album.release_date = album_data.get('release_date', album.release_date)
+            album.num_stars = album_data.get('num_stars', album.num_stars)
+            album.save()
+        return instance
 
 class LandMiniSerializer(serializers.ModelSerializer):
     

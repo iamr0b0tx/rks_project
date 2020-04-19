@@ -27,9 +27,8 @@ function send_request(url, callback, method, data, use_token) {
 
     if(method == 'GET'){
         xmlhttp.send();
-    }
 
-    if (method == 'POST') {
+    }else{
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send(serialize(data));
     }
@@ -42,6 +41,10 @@ function send_get_request(url, callback, use_token=true){
 
 function send_post_request(url, data, callback, use_token=true){
     return send_request(url, callback, "POST", data, use_token);
+}
+
+function send_put_request(url, data, callback, use_token = true) {
+    return send_request(url, callback, "PUT", data, use_token);
 }
 
 function toggle_form_state(element){

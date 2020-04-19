@@ -45,7 +45,6 @@ var peanut_allotment = document.getElementById('peanut_allotment');
 
 var land_value = document.getElementById('value_input');
 
-
 // show username
 username_label.innerHTML = sessionStorage.getItem('username');
 
@@ -79,6 +78,43 @@ function submit(element) {
                 // get response if succesfull or not
                 var message = (status == 200 || status == 201) ? "Successful" : "Failed! Make sure to fill all fields with numbers!";
                 alert('Data upload ' + message + '!');
+
+                // go home
+                location.href = window.location.origin
+            });
+    
+    } else if(element.innerHTML == "Update") {
+        send_put_request(window.location.origin + "/api/land/"+land_id+"/",
+            {
+                "longitude": longitude.value,
+                "latitude": latitude.value,
+                "size": size.value,
+                "productive_quality": productive_quality.value,
+                "land_type": land_type.value,
+                "quality": quality.value,
+                "mineral_quantity": mineral_quantity.value,
+                "road_type": road_type.value,
+                "distance_to_paved_road": distance_to_paved_road.value,
+                "distance_to_nearest_town": distance_to_nearest_town.value,
+                "nearest_town_size": nearest_town_size.value,
+                "distance_to_principal_city": distance_to_principal_city.value,
+                "distance_to_metropolitan_center": distance_to_metropolitan_center.value,
+                "distance_to_city_towns": distance_to_city_towns.value,
+                "wheat_allotment": wheat_allotment.value,
+                "cotton_allotment": cotton_allotment.value,
+                "peanut_allotment": peanut_allotment.value,
+                "land_value": land_value.value,
+
+            }, function (data, status) {
+                console.log(data);
+                console.log(status);
+
+                // get response if succesfull or not
+                var message = (status == 200 || status == 201) ? "Successful" : "Failed! Make sure to fill all fields with numbers!";
+                alert('Data update ' + message + '!');
+
+                // go home
+                location.href = window.location.origin;
             });
     }   
 }
