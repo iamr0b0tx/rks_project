@@ -30,6 +30,8 @@ ALLOWED_HOSTS = [
     'rks-app.herokuapp.com',
     'localhost',
     '127.0.0.1',
+    '45.79.11.62',
+    'spatialardhi.com',
 ]
 
 
