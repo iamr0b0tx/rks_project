@@ -23,7 +23,6 @@ sqlparse==0.3.1
 urllib3==1.25.8
 pandas
 django-pandas
-sqlite3
 gunicorn==19.6.0
 dj-database-url 
 psycopg2
