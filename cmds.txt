@@ -1,0 +1,15 @@
+sudo cp spatial.conf /etc/apache2/sites-available/
+sudo cp spatial_ssl.conf /etc/apache2/sites-available/
+sudo cat /etc/apache2/sites-available/spatial.conf
+
+sudo cp rks_project.conf /etc/apache2/sites-available/
+sudo cp 000-default.conf /etc/apache2/sites-available/
+sudo cat /etc/apache2/sites-available/
+
+sudo cp spatial2.conf /etc/apache2/sites-available/ & sudo cp spatial_ssl2.conf /etc/apache2/sites-available/ & sudo cat /etc/apache2/sites-available/spatial2.conf
+sudo mv spatial.conf /etc/apache2/sites-available/rks_project.conf & sudo mv spatial_ssl.conf /etc/apache2/sites-available/rks_project.conf & sudo cat /etc/apache2/sites-available/rks_project.conf
+
+sudo cp 000-default.conf /etc/apache2/sites-available/
+sudo cp default-site.conf /etc/apache2/sites-available/
+sudo cp spatial.conf /etc/apache2/sites-available/
+sudo cp spatial_ssl.conf /etc/apache2/sites-available/
