@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -164,18 +163,17 @@ LOGIN_URL = "/rk/accounts/login/"
 # LOGIN_REDIRECT_URL = "/"
 # LOGOUT_REDIRECT_URL = "/"
 
-UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
-UPLOAD_PATH = os.path.join(BASE_DIR, "uploads")
-UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
+UPLOAD_DIR = os.path.join(STATIC_ROOT, "property/images")
+UPLOAD_PATH = os.path.join(STATIC_ROOT, "property/images")
+UPLOAD_FOLDER = os.path.join(STATIC_ROOT, "property/images")
 
-MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+MEDIA_ROOT = os.path.join(STATIC_ROOT , 'property/images')
 MEDIA_URL = '/media/'
 
 # ie if Heroku server
-# if 'DATABASE_URL' in os.environ:
-#     DEBUG = False
+if 'DATABASE_URL' in os.environ:
+    DEBUG = False
 
-#     import dj_database_url
-#     DATABASES = {'default': dj_database_url.config()}
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
 
-django_heroku.settings(locals())

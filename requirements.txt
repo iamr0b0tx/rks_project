@@ -28,4 +28,4 @@ dj-database-url
 psycopg2
 Pillow
 django-crispy-forms
-django_heroku
+# django_heroku
