@@ -163,12 +163,12 @@ LOGIN_URL = "/rk/accounts/login/"
 # LOGIN_REDIRECT_URL = "/"
 # LOGOUT_REDIRECT_URL = "/"
 
-UPLOAD_DIR = os.path.join(BASE_DIR, "media")
-UPLOAD_PATH = os.path.join(BASE_DIR, "media")
-UPLOAD_FOLDER = os.path.join(BASE_DIR, "media")
+# UPLOAD_DIR = os.path.join(BASE_DIR, "media")
+# UPLOAD_PATH = os.path.join(BASE_DIR, "media")
+# UPLOAD_FOLDER = os.path.join(BASE_DIR, "media")
 
-MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+# MEDIA_URL = '/media/'
 
 # ie if Heroku server
 if 'DATABASE_URL' in os.environ:
