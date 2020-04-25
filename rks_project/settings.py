@@ -172,5 +172,7 @@ MEDIA_URL = '/media/'
 
 # ie if Heroku server
 if 'DATABASE_URL' in os.environ:
+    DEBUG = False
+
     import dj_database_url
     DATABASES = {'default': dj_database_url.config()}
