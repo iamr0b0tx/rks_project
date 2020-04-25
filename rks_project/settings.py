@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -24,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k+rhi79*_p=)so3h@i$8!=)s(a82b=$mz#6qc@n#97-rmr5dh!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'rks-app.herokuapp.com',
@@ -171,8 +172,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 MEDIA_URL = '/media/'
 
 # ie if Heroku server
-if 'DATABASE_URL' in os.environ:
-    DEBUG = False
+# if 'DATABASE_URL' in os.environ:
+#     DEBUG = False
 
-    import dj_database_url
-    DATABASES = {'default': dj_database_url.config()}
+#     import dj_database_url
+#     DATABASES = {'default': dj_database_url.config()}
+
+django_heroku.settings(locals())
