@@ -163,11 +163,11 @@ LOGIN_URL = "/rk/accounts/login/"
 # LOGIN_REDIRECT_URL = "/"
 # LOGOUT_REDIRECT_URL = "/"
 
-UPLOAD_DIR = os.path.join(STATIC_ROOT, "property/images")
-UPLOAD_PATH = os.path.join(STATIC_ROOT, "property/images")
-UPLOAD_FOLDER = os.path.join(STATIC_ROOT, "property/images")
+UPLOAD_DIR = os.path.join(BASE_DIR, "media")
+UPLOAD_PATH = os.path.join(BASE_DIR, "media")
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "media")
 
-MEDIA_ROOT = os.path.join(STATIC_ROOT , 'property/images')
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 MEDIA_URL = '/media/'
 
 # ie if Heroku server
