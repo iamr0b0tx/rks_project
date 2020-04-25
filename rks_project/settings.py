@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k+rhi79*_p=)so3h@i$8!=)s(a82b=$mz#6qc@n#97-rmr5dh!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'rks-app.herokuapp.com',
@@ -155,7 +155,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "frontend/static"),
+    os.path.join(BASE_DIR, "property/static"),
+]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
