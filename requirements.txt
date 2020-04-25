@@ -25,4 +25,5 @@ pandas
 django-pandas
 gunicorn==19.6.0
 dj-database-url 
-# psycopg2
+psycopg2
+Pillow

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home | Spatial Ardhi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/property/images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500"> 
+    <link rel="stylesheet" href="/static/property/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/static/property/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/property/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/property/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/property/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/property/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/property/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/static/property/css/mediaelementplayer.css">
+    <link rel="stylesheet" href="/static/property/css/animate.css">
+    <link rel="stylesheet" href="/static/property/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/static/property/css/fl-bigmug-line.css">
+    <link rel="stylesheet" href="/static/property/css/leaflet.css" />
+  
+    <link rel="stylesheet" href="/static/property/css/aos.css">
+
+    <link rel="stylesheet" href="/static/property/css/style.css">
+    
+  </head>
+  <body>
+  
+  <div class="site-loader"></div>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    <div class="border-bottom bg-white top-bar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-6">
+            <p class="mb-0">
+              <a href="#" class="mr-3"><span class="text-black fl-bigmug-line-phone351"></span> <span class="d-none d-md-inline-block ml-2">+254 725811614</span></a>
+              <a href="#"><span class="text-black fl-bigmug-line-email64"></span> <span class="d-none d-md-inline-block ml-2">info@spatialardhi.com</span></a>
+              <!--a href="/register/"><span class="text-black"></span> <span class="d-none d-md-inline-block ml-2">Register</span></a>
+              <a href="/admin/"><span class="text-black"></span> <span class="d-none d-md-inline-block ml-2">Login</span></a-->
+            </p>  
+          </div>
+          <div class="col-6 col-md-6 text-right">
+            <a href="/register/" class="mr-3"><span class="text-black">Register</span></a>
+            <a href="/admin/" class="mr-3"><span class="text-black">Login</span></a>
+            <!--a href="#" class="mr-0"><span class="text-black icon-linkedin"></span></a-->
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="site-navbar">
+        <div class="container py-1">
+          <div class="row align-items-center">
+            <div class="col-8 col-md-8 col-lg-4">
+              <a href="/"><img src="/static/property/images/companylogo.png" alt="Logo"></a>
+              <!--h1 class=""><a href="index.html" class="h5 text-uppercase text-black"><strong>Spatial Ardhi<span class="text-danger">.</span></strong></a></h1-->
+            </div>
+            <div class="col-4 col-md-4 col-lg-8">
+              <nav class="site-navigation text-right text-md-right" role="navigation">
+
+                <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                  <li class="active">
+                    <a href="/">Home</a>
+                  </li>
+                  <li class="has-children">
+                    <a href="#">Properties</a>
+                    <ul class="dropdown">
+                      <li><a href="/lands/">Land</a></li>
+                      <li><a href="/houses/">Houses</a></li>
+                      
+                    </ul>
+                  </li>
+                  {% if user.is_authenticated %}
+                      <!--li><a href="/new/">New Property</a></li-->
+                  
+                  {% endif %}
+                
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+           
+
+          </div>
+        </div>
+      </div>
+    </div>

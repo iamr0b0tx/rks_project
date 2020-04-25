@@ -1,0 +1,115 @@
+{% include "property/header.html" %}
+
+ 
+
+    {% include "property/search.html" %}
+    <div class="site-section site-section-sm bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="site-section-title">
+              <h2>Latest Properties</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+
+                    {% for land in listings %}
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="/land/{{ land.id }}" class="prop-entry d-block">
+              <figure>
+                <img src="/media/{{ land.photo1 }}" alt="Image" class="img-fluid">
+              </figure>
+              <div class="prop-text">
+                <div class="inner">
+                  {% load humanize %}
+                  <span class="price rounded">Ksh. {{ land.price | intcomma }}</span>
+                  <h3 class="title">{{ land.name }}</h3>
+                  <p class="location">{{ land.location }}</p>
+                </div>
+                <div class="prop-more-info">
+                  <div class="inner d-flex">
+                    <div class="col">
+                      <span>Area:</span>
+                      <strong>{{ land.area }}m<sup>2</sup></strong>
+                    </div>
+                    <div class="col">
+                      <span>Beds:</span>
+                      <strong>{{ land.parcel_no }}</strong>
+                    </div>
+                    
+                    <!--div class="col">
+                      <span>Garages:</span>
+                      <strong>1</strong>
+                    </div-->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          {% endfor %}
+       
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="site-pagination">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <span>...</span>
+              <a href="#">10</a>
+            </div>
+          </div>  
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center mb-5">
+            <div class="site-section-title">
+              <h2>Our Services</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="#" class="service text-center border rounded">
+              <span class="icon flaticon-house"></span>
+              <h2 class="service-heading">Land Surveying</h2>
+              <p><span class="read-more">Learn More</span></p>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="#" class="service text-center border rounded">
+              <span class="icon flaticon-sold"></span>
+              <h2 class="service-heading">Sales and Letting</h2>
+              <p><span class="read-more">Learn More</span></p>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="#" class="service text-center border rounded">
+              <span class="icon flaticon-camera"></span>
+              <h2 class="service-heading">Property Management</h2>
+              <p><span class="read-more">Learn More</span></p>
+            </a>
+          </div>
+
+         
+        </div>
+      </div>
+    </div>
+
+
+    
+    
+
+    {% include "property/footer.html" %}

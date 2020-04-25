@@ -24,14 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k+rhi79*_p=)so3h@i$8!=)s(a82b=$mz#6qc@n#97-rmr5dh!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'rks-app.herokuapp.com',
     'localhost',
     '127.0.0.1',
-    '45.79.11.62',
-    'spatialardhi.com',
 ]
 
 
@@ -44,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
@@ -53,8 +52,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.openid',
     'rest_auth.registration',
+
     'api',
     'frontend',
+
+    'django.contrib.humanize',
+    'crispy_forms',
+    'property',
+    'register',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -85,7 +90,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'templates/'
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -149,10 +154,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "")
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = []
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_URL = "/rk/accounts/login/"
+# LOGIN_REDIRECT_URL = "/"
+# LOGOUT_REDIRECT_URL = "/"
+
+UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
+UPLOAD_PATH = os.path.join(BASE_DIR, "uploads")
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
+
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
+MEDIA_URL = '/media/'
 
 # ie if Heroku server
 if 'DATABASE_URL' in os.environ:

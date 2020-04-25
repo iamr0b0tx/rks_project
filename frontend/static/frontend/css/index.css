@@ -1,0 +1,95 @@
+body {
+    background-color: aqua;
+    margin: 0; 
+    padding: 0; 
+}
+
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
+
+#input_field{
+    position: fixed;
+    z-index: 10;
+    top: 0%;
+    bottom: 0%;
+
+    /* max-height: 1000px; */
+    padding: 0px;
+    background-color: #fff;
+}
+
+#input_field > div > a{
+    cursor: pointer;
+}
+
+div > form {
+    overflow-y: scroll;
+    margin-top: 10px;
+    height: 60%;
+    width: 100%;
+    font-weight: 800;
+    color: #000;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.form-group{
+    margin-bottom: 5px;
+}
+
+.value{
+    border: 1px solid #555;
+
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    min-height: 10%;
+    max-height: 17%;
+    margin: 15px;
+}
+
+.value > label {
+    font-weight: 1000;
+    font-size: 150%;
+}
+
+label{
+    text-align: left!important;
+}
+
+#form_toggle{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-color: #286090;
+    color: #FFF;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    font-size: 250%;
+    text-align: center;
+    padding-top: 3px;
+}

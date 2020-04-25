@@ -6,13 +6,13 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def index(request):
     ''' index page of site '''
-    return render(request, 'index.html')
+    return render(request, 'frontend/index.html')
 
 
 def signin(request):
     ''' login page of site '''
-    return render(request, 'signin.html')
+    return render(request, 'frontend/signin.html')
 
 def signup(request):
     ''' signup page of site '''
-    return render(request, 'signup.html')
+    return render(request, 'frontend/signup.html')
