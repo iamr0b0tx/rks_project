@@ -1,4 +1,4 @@
 @echo off
 cls
-py manage.py collectstatic
+REM py manage.py collectstatic
 py manage.py runserver

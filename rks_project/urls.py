@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'property/(?P<pid>[^/]+)$', views.property_detail, name='property_detail'),
     url(r'register/', register, name='register'),
     # url(r'', include('django.contrib.auth.urls')),
-    url(r'', views.home, name='home'),
+    url('', views.home, name='home'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
