@@ -26,5 +26,3 @@ django-pandas
 gunicorn==19.6.0
 dj-database-url 
 psycopg2
-Pillow
-django-crispy-forms

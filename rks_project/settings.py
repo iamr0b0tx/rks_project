@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
@@ -52,14 +51,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.openid',
     'rest_auth.registration',
-
     'api',
     'frontend',
-
-    # 'django.contrib.humanize',
-    # 'crispy_forms',
-    # 'property',
-    # 'register',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -90,7 +83,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
+            'templates/'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -116,6 +109,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# ie if Heroku server
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
     
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -158,24 +156,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-LOGIN_URL = "/rk/accounts/login/"
-# LOGIN_REDIRECT_URL = "/"
-# LOGOUT_REDIRECT_URL = "/"
-
-# UPLOAD_DIR = os.path.join(BASE_DIR, "media")
-# UPLOAD_PATH = os.path.join(BASE_DIR, "media")
-# UPLOAD_FOLDER = os.path.join(BASE_DIR, "media")
-
-# MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
-# MEDIA_URL = '/media/'
-
-# ie if Heroku server
-if 'DATABASE_URL' in os.environ:
-    DEBUG = False
-
-    import dj_database_url
-    DATABASES = {'default': dj_database_url.config()}
-
