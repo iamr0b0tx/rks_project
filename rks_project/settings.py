@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k+rhi79*_p=)so3h@i$8!=)s(a82b=$mz#6qc@n#97-rmr5dh!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'rks-app.herokuapp.com',
@@ -56,10 +56,10 @@ INSTALLED_APPS = [
     'api',
     'frontend',
 
-    'django.contrib.humanize',
-    'crispy_forms',
-    'property',
-    'register',
+    # 'django.contrib.humanize',
+    # 'crispy_forms',
+    # 'property',
+    # 'register',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
