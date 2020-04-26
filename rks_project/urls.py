@@ -17,13 +17,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('rk/', include('frontend.urls')),
-	url(r'houses/', views.houses, name='houses'),
-	url(r'lands/', views.lands, name='lands'),
-	url(r'house/(?P<pid>[^/]+)$', views.house_detail, name='house_detail'),
-	url(r'land/(?P<pid>[^/]+)$', views.land_detail, name='land_detail'),
-    url(r'property/(?P<pid>[^/]+)$', views.property_detail, name='property_detail'),
-    url(r'register/', register, name='register'),
-    # url(r'', include('django.contrib.auth.urls')),
-    url('', views.home, name='home'),
+    
+	# url(r'houses/', views.houses, name='houses'),
+	# url(r'lands/', views.lands, name='lands'),
+	# url(r'house/(?P<pid>[^/]+)$', views.house_detail, name='house_detail'),
+	# url(r'land/(?P<pid>[^/]+)$', views.land_detail, name='land_detail'),
+    # url(r'property/(?P<pid>[^/]+)$', views.property_detail, name='property_detail'),
+    # url(r'register/', register, name='register'),
+    # # url(r'', include('django.contrib.auth.urls')),
+    # url('', views.home, name='home'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
