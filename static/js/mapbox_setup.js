@@ -27,7 +27,7 @@ send_get_request(window.location.origin + "/api/land_mini/", function (data, sta
         marker.on('click', function (e) {
             send_get_request(window.location.origin + "/api/land/" + marker.options.alt + "/", function (data, status) {
                 if (status != 200 && status != 201) return
-                
+
                 land_id = marker.options.alt;
                 submit_btn.innerHTML = "Update";
 
@@ -37,13 +37,13 @@ send_get_request(window.location.origin + "/api/land_mini/", function (data, sta
                 edit_marker.setOpacity(1);
                 edit_marker.setZIndexOffset(10);
                 edit_marker.setLatLng(e.latlng);
-                
+
                 hidden_marker.setZIndexOffset(1);
                 hidden_marker.setOpacity(1);
 
                 // keep track of hidden marker
                 hidden_marker = marker;
-                
+
                 longitude.value = data.longitude
                 latitude.value = data.latitude
                 size.value = data.size
@@ -63,8 +63,8 @@ send_get_request(window.location.origin + "/api/land_mini/", function (data, sta
                 peanut_allotment.value = data.peanut_allotment
                 land_value.value = data.land_value
 
-                
-            });  
+
+            });
         });
 
         marker.bindPopup(title);
@@ -77,7 +77,7 @@ send_get_request(window.location.origin + "/api/land_mini/", function (data, sta
 var edit_marker = L.marker(new L.LatLng(10, 10), {
     icon: L.mapbox.marker.icon({
         'marker-color': '#f86767'
-    }), 
+    }),
     opacity: 0,
     clickable: true,
     draggable: true,
@@ -94,7 +94,7 @@ edit_marker.on('drag', function (e) {
 var new_marker = L.marker(new L.LatLng(0, 0), {
     icon: L.mapbox.marker.icon({
         'marker-color': '#0062cc'
-    }), 
+    }),
     clickable: true,
     draggable: true,
 }).addTo(map);
