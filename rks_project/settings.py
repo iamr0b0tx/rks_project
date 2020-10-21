@@ -11,27 +11,29 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env = environ.Env()
+env_file = os.path.join(BASE_DIR, '.env')
+if os.path.exists(env_file):
+    environ.Env.read_env(env_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k+rhi79*_p=)so3h@i$8!=)s(a82b=$mz#6qc@n#97-rmr5dh!'
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG')))
 
 ALLOWED_HOSTS = [
-    'rks-app.herokuapp.com',
-    'localhost',
-    '127.0.0.1',
+    os.environ.get('HOST'),
 ]
-
 
 # Application definition
 
