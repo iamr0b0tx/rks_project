@@ -31,7 +31,7 @@ if os.path.exists(env_file):
 SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 0#bool(int(os.environ.get('DEBUG')))
+DEBUG = int(os.environ.get('DEBUG'))
 
 ALLOWED_HOSTS = [
     os.environ.get('HOST'),
