@@ -1,7 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
 <html>
-
     <head>
         <meta charset=utf-8 />
         <title>Home</title>
@@ -20,17 +18,17 @@
         <!-- bootstrap dependencies -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        
+
         <!-- jQuery library -->
         <script src="{% static 'js/jquery.min.js' %}"></script>
-        
+
         <!-- Latest compiled JavaScript -->
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/a076d05399.js' %}"></script>
-        
+
         <!-- custom styles -->
         <link href="{% static 'css/index.css' %}" rel="stylesheet" />
-        
+
         <!-- Example data. -->
         <script src="{% static 'js/realworld.388.js' %}"></script>
 
@@ -52,25 +50,25 @@
     <body>
         <div class="col-md-4" id="input_field" style="z-index:10">
             <div class="text-center"><span id="username">Not Logged in</span> | <a onclick="logout()">Log Out</a></div>
-        
+
             <!-- switch between upload mode and predict mode -->
             <div class="btn-group btn-group-justified col-md-12">
                 <a class="btn btn-primary active" id="upload_btn" onclick=toggle_form_state(this) style="opacity:1.0">Upload</a>
                 <a class="btn btn-primary active" id="query_btn" onclick=toggle_form_state(this) style="opacity:0.5">Query</a>
             </div>
-        
+
             <!-- the value display/input -->
             <div class="form-group row value">
                 <div class="col-md-2"></div>
                 <label class="control-label col-md-8" for="value">Value: <input type="number" class="form-control col-md-12" id="value_input"></label>
-                <div class="col-md-2"></div> 
+                <div class="col-md-2"></div>
             </div>
-        
+
             <!-- button to predict or upload -->
             <div class="btn-group btn-group-justified col-md-12">
                 <a class="btn btn-primary active" id="submit_btn" onclick="submit(this)">Upload</a>
             </div>
-        
+
             <!-- form for input parameters -->
             <form class="form-horizontal">
                 <div class="form-group row">
@@ -79,63 +77,63 @@
                         <input type="number" class="form-control" id="longitude">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="longitude">Latitude:</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="latitude">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="size">Size (acres):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="size">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="productive_quality">Productive Quality:</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="productive_quality" >
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="land_type">Land Type:</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="land_type">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="quality">Quality:</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="quality">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="mineral_quantity">Mineral Quantity (%):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="mineral_quantity">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="road_type">Road Type:</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="road_type">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_paved_road">Distance to paved road:</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="distance_to_paved_road">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_nearest_town">Distance to nearest town
                         (miles):</label>
@@ -143,14 +141,14 @@
                         <input type="number" class="form-control" id="distance_to_nearest_town">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="nearest_town_size">Nearest town size (people):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="nearest_town_size">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_principal_city">Distance to principal city
                         (miles):</label>
@@ -158,7 +156,7 @@
                         <input type="number" class="form-control" id="distance_to_principal_city">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_metropolitan_center">Distance to metropolitan center
                         (miles):</label>
@@ -166,41 +164,41 @@
                         <input type="number" class="form-control" id="distance_to_metropolitan_center">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="distance_to_city_towns">Distance to city towns (miles):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="distance_to_city_towns">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="wheat_allotment">Wheat allotment (acres):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="wheat_allotment">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="cotton_allotment">Cotton allotment (acres):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="cotton_allotment">
                     </div>
                 </div>
-        
+
                 <div class="form-group row">
                     <label class="control-label col-md-8" for="peanut_allotment">Peanut allotment (acres):</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="peanut_allotment" >
                     </div>
                 </div>
-        
+
             </form>
         </div>
-        
+
         <!-- toggle form input -->
         <button id="form_toggle" onclick="toggle_input_field()"><span class="fas fa-edit"></span></button>
-                
+
         <!-- the map view -->
         <div id='map'></div>
 
